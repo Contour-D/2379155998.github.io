@@ -16,7 +16,7 @@
   <meta name="description" content="">
   <meta name="author" content="Delong Du">
   <meta name="keywords" content="">
-  <title>标签 ~ CodeTour</title>
+  <title>MySQL--Explain ~ CodeTour</title>
 
   <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"  >
@@ -39,7 +39,7 @@
 
 
 <body>
-  <header style="height: 70vh;">
+  <header style="height: 60vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -106,7 +106,7 @@
   </div>
 </nav>
 
-    <div class="view intro-2" id="background" parallax=true
+    <div class="view intro-2" id="background" false
          style="background: url('/img/default.png')no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
@@ -116,6 +116,41 @@
               
             </span>
 
+            
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期一, 二月 17日 2020, 1:53 凌晨
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    285 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      1 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
             
           </div>
 
@@ -127,22 +162,108 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-<div class="text-center tagcloud">
-  <a href="/tags/MySQL-SQL/" style="font-size: 15px; color: #bbe">MySQL,SQL</a>
-</div>
-              </div>
-            </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <h6 id="用法：Explain-SQL"><a href="#用法：Explain-SQL" class="headerlink" title="用法：Explain SQL"></a>用法：Explain SQL</h6><pre><code class="sql">explain select surname,first_name form a,b where a.id=b.id</code></pre>
+<p><img src="https://img-blog.csdn.net/20180520151002824?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3doeTE1NzMyNjI1OTk4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" srcset="/img/loading.gif" alt="explain列名"></p>
+<p><strong>id</strong></p>
+<p> id是用来顺序标识整个查询中SELELCT 语句的<br>在嵌套查询中id越大的语句越先执行<br>该值可能为NULL，如果这一行用来说明的是其他行的联合结果。 </p>
+<p><strong>select_type</strong><br>查询的类型</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>simple</td>
+<td>简单SELECT,不使用UNION或子查询等</td>
+</tr>
+<tr>
+<td>primary</td>
+<td>查询中若包含任何复杂的子部分,最外层的select被标记为primary</td>
+</tr>
+<tr>
+<td>union</td>
+<td>位于union中第二个及其以后的子查询被标记为union，第一个就被标记为primary如果是union位于from中则标记为derived</td>
+</tr>
+<tr>
+<td>dependent union</td>
+<td>需要满足UNION的条件，及UNION中第二个以及后面的SELECT语句，同时该语句依赖外部的查询</td>
+</tr>
+<tr>
+<td>union result</td>
+<td>用来从匿名临时表里检索结果的select被标记为union result</td>
+</tr>
+<tr>
+<td>subquery</td>
+<td>子查询中的第一个select</td>
+</tr>
+<tr>
+<td>dependent subquery</td>
+<td>子查询中的第一个select，取决于外面的查询</td>
+</tr>
+<tr>
+<td>derived</td>
+<td>派生表的select,from子句的子查询</td>
+</tr>
+<tr>
+<td>uncacheable subquery</td>
+<td>一个子查询的结果不能被缓存，必须重新评估外链接的第一行</td>
+</tr>
+</tbody></table>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/MySQL,SQL">MySQL,SQL</a>
+                
+              </span>
+            
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
           </div>
         </div>
       </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+  </div>
+</div>
+
     
   </main>
 
@@ -221,6 +342,11 @@
 
 
 
+  
+    <script src="/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
 
 
   <script src="/lib/smoothscroll/SmoothScroll.min.js" ></script>
@@ -261,7 +387,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "标签&nbsp;",
+        "MySQL--Explain&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

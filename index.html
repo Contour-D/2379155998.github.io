@@ -27,7 +27,7 @@
 
 
 
-  <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css"  >
+  <link rel="stylesheet" href="/lib/prettify/github-v2.min.css"  >
 
 <link rel="stylesheet" href="/css/main.css"  >
 
@@ -39,7 +39,7 @@
 
 
 <body>
-  <header style="height: 50vh;">
+  <header style="height: 60vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -135,6 +135,76 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
+
+  <div class="row mx-auto index-card">
+    
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a href="/2020/02/17/MySQL--Explain/">
+        <p class="h4 index-header">MySQL--Explain</p>
+      </a>
+
+      <a href="/2020/02/17/MySQL--Explain/">
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">用法：Explain SQLexplain select surname,first_name form a,b where a.id=b.id
+
+id
+ id是用来顺序标识整个查询中SELELCT 语句的在嵌套查询中id越大的语句越先执行该值可能为NULL，如果这一行用来说明的是其他行的联合结果。 
+select_type查询的类型
+
+
+
+类型
+说明
+
+
+
+simple
+简单SELECT,不使用UNION或子查询等
+
+
+primary
+查询中若包含任何复杂的子部分,最外层的select被标记为primary
+
+
+union
+位于union中第二个及其以后的子查询被标记为union，第一个就被标记为primary如果是union位于from中则标记为derived
+
+
+dependent union
+需要满足UNION的条件，及UNION中第二个以及后面的SELECT语句，同时该语句依赖外部的查询
+
+
+union result
+用来从匿名临时表里检索结果的select被标记为union result
+
+
+subquery
+子查询中的第一个select
+
+
+dependent subqu</div>
+        </div>
+      </a>
+
+      <div class="index-btm">
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2020-02-17&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/MySQL,SQL">MySQL,SQL</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
 
   <div class="row mx-auto index-card">
     

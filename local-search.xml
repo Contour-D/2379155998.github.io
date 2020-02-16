@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>MySQL--Explain</title>
+    <link href="/2020/02/17/MySQL--Explain/"/>
+    <url>/2020/02/17/MySQL--Explain/</url>
+    
+    <content type="html"><![CDATA[<h6 id="用法：Explain-SQL"><a href="#用法：Explain-SQL" class="headerlink" title="用法：Explain SQL"></a>用法：Explain SQL</h6><pre><code class="sql">explain select surname,first_name form a,b where a.id=b.id</code></pre><p><img src="https://img-blog.csdn.net/20180520151002824?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3doeTE1NzMyNjI1OTk4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" srcset="/img/loading.gif" alt="explain列名"></p><p><strong>id</strong></p><p> id是用来顺序标识整个查询中SELELCT 语句的<br>在嵌套查询中id越大的语句越先执行<br>该值可能为NULL，如果这一行用来说明的是其他行的联合结果。 </p><p><strong>select_type</strong><br>查询的类型</p><table><thead><tr><th>类型</th><th>说明</th></tr></thead><tbody><tr><td>simple</td><td>简单SELECT,不使用UNION或子查询等</td></tr><tr><td>primary</td><td>查询中若包含任何复杂的子部分,最外层的select被标记为primary</td></tr><tr><td>union</td><td>位于union中第二个及其以后的子查询被标记为union，第一个就被标记为primary如果是union位于from中则标记为derived</td></tr><tr><td>dependent union</td><td>需要满足UNION的条件，及UNION中第二个以及后面的SELECT语句，同时该语句依赖外部的查询</td></tr><tr><td>union result</td><td>用来从匿名临时表里检索结果的select被标记为union result</td></tr><tr><td>subquery</td><td>子查询中的第一个select</td></tr><tr><td>dependent subquery</td><td>子查询中的第一个select，取决于外面的查询</td></tr><tr><td>derived</td><td>派生表的select,from子句的子查询</td></tr><tr><td>uncacheable subquery</td><td>一个子查询的结果不能被缓存，必须重新评估外链接的第一行</td></tr></tbody></table>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>MySQL,SQL</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
     <link href="/2020/02/17/hello-world/"/>
     <url>/2020/02/17/hello-world/</url>
